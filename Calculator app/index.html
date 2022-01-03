@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="css/style.css">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+     <div class="wrapper">
+
+            <!--Logo-->
+            <header class="header">
+                <img src="images/logo.svg" alt="">
+            </header>
+          
+
+            <!--Container-->
+                <div class="container radius ">
+            
+                  
+                <!--Main section-->
+                    <main class="main-section flex">
+              <!--Header-->
+                    <div class="calculator-wrapper-flex">
+
+                      
+                            <header class="header-calculator ">
+                              <h1 class="font-h1">Bill</h1>
+
+                              <div class="calculator-output ">
+                                  <img class="dollar-img" src="images/icon-dollar.svg" alt="">
+                                      <input class="btn-input crl-input" type="text" value="" placeholder="" id=""><span class="shift-right"> 12</span>
+                                      
+                              </div>
+                          </header>
+
+                            <section class="tip">
+                                  <h1 class="font-h1">Select Tip %</h1>
+                      <!--Calculator-->
+                                  <div class="main-calculator">
+                                    <form class="form" action="">
+                                        <div class="grid column-2">
+                                          <input class="btn-input btn-input-number" type="button" placeholder="btn" value="5%">  
+                                          <input class="btn-input btn-input-number" type="button" placeholder="btn" value="10%">  
+                                          <input class="btn-input btn-input-number active" type="button" placeholder="btn" value="15%">  
+                                          <input class="btn-input btn-input-number" type="button" placeholder="btn" value="25%">  
+                                          <input class="btn-input btn-input-number" type="button" placeholder="btn" value="50%">  
+                                          <input class="btn-input btn-input-number inactive" type="button" placeholder="btn" value="Custom">  
+                                      </div>
+                                    </form>
+                                  </div>
+
+                                    <div class="number-of-people">
+                                        <h3 class="font-h3">  Number of People</h3>
+
+                                        <div class="input-number-of-people">
+                                          <img class="person-img" src="images/icon-person.svg" alt="">
+                                          <input class="btn-input crl-input" type="text" value="" id=""><span class="shift-right">5</span> 
+                                        </div>
+                                  </div>
+                            </section>
+                      </div>
+
+                      <div class="reset-wrapper-flex">
+                        <section class="reset">
+                          <div class="section-calculation ">
+                            <div class="flex column-2-between">
+                                  <div class="amount">                   
+                                      <h1 class="font-h1">Tip amount</h1>
+                                      <p >/person</p>
+                                    
+                                    
+                                    
+                                        <span class="shift-right amount-bottom">$1.23</span>
+                                  </div>
+
+                                  <div class="figures">
+                                        <h1 class="font-h1" >Total</h1>
+                                        <p>/person</p>
+
+                                        <span class="shift-right figures-bottom">$23.6</span>
+                                  </div>
+                            </div>
+
+                                      <!--Reset button-->
+                                <div class="button">
+                                      <button class="btn" type="submit"> Reset</button>
+                                </div> 
+                              
+                          
+                              </div>
+                          </section>
+                        </div>
+                      </div>
+                    </main> 
+
+                </div>
+
+
+              </div>
+    
+
+</body>
+
+ 
+
+<script src="js/advanced.js"></script>
+</html>

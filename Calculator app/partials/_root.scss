@@ -1,0 +1,40 @@
+:root {
+
+    //Font family
+    --ff: "Rubic", sans-serif;
+
+
+    // Mobile: - Desktop: 
+    --mobile: 375px;
+    --desktop: 1440px;
+
+
+    // Colors 
+
+    //Primary
+    --crl-primary: hsl(172, 67%, 45%);
+
+
+    // Neutral
+    --crl-neutral-verydarkcyan: hsl(183, 100%, 15%);
+    --crl-neutral-darkgraishcyan: hsl(186, 14%, 43%);
+    --crl-neutral-darkcyancyan2: hsl(184, 14%, 56%);
+    --crl-neutral-lightgraishcyan: hsl(185, 41%, 84%);
+    --crl-neutral-lightgraishcyan2: hsl(189, 41%, 97%);
+    --crl-neutral-white: hsl(0, 0%, 100%);
+
+
+    // Typography
+    // Body
+
+    --fs: 1.5rem;
+
+    //Font weight
+    --fw-400: 400;
+    --fw-500:500;
+    --fw-600: 600;
+    --fw-700: 700;
+    --fw-800:800;
+
+
+}

@@ -1,0 +1,155 @@
+/*Helpers*/
+
+.flow > * + * {
+    margin-top: var(--spacer, 1em);
+}
+
+.grid {
+    display: grid;
+    gap: 1em;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.radius {
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+}
+
+.column-2 {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-self: center;
+    gap: 1em;
+}
+
+.column-2-between {
+    flex-direction: column;
+    // justify-content: space-between;
+    // align-items:baseline;
+    padding-inline: 1em;
+    // padding-block: -3em;
+}
+
+.column-3 {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-self: center;
+    gap: 1em;
+}
+
+.btn-input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: var(--fs);
+    font-size: 1.075em;
+    // padding-left: .5em;
+    outline: none;
+    box-shadow: 5px 2px 3px (255,240,255,0.6);
+    // margin-inline: .5em;
+    // margin-block: .5em;
+   
+     background-color: var(--crl-neutral-lightgraishcyan2);
+    padding-block: .5em;
+
+ 
+    
+}
+.btn-input-number {
+    width: 100%;
+    background-color: #136f6f;
+   
+    cursor: pointer;
+    font-size: var(--fs);
+    font-weight: var(--fw-700);
+    color: var(--crl-neutral-white);
+
+    &:hover {
+        color: var(--crl-neutral-verydarkcyan);
+        background-color: var(--crl-neutral-lightgraishcyan);
+    }
+}
+
+.crl-input {
+    color: var(--crl-neutral-lightgraishcyan);
+}
+
+.font-h1 {
+   color: var(--crl-neutral-darkgraishcyan);
+   font-size: 1rem;
+   font-weight: var(--fw-700);
+   font-family: var(--ff);
+
+   margin-bottom: .5em;
+   margin-top: .5em;
+   padding-top: 1.5em;
+}
+
+.font-h2 {
+    color: var(--crl-neutral-darkgraishcyan);
+    font-size: 1rem;
+    color: var(--crl-neutral-darkcyancyan2);
+    font-weight: 700;
+}
+
+.font-h3 {
+ color: var(--crl-neutral-darkcyancyan2);
+ font-size: 0.7rem;
+ font-weight: 600;
+ margin-bottom: 0.5em;
+ margin-top: 1.8em;
+ text-transform:lowercase;
+}
+
+.amount,
+.figures {
+    position: relative;
+       
+}
+
+.figures {
+ margin-top: -1em;
+
+ .font-h1 {
+     margin-top: .7em;
+ }
+}
+
+.shift-right {
+
+   position: absolute;
+   left: 11em;
+   top: .5em;
+   color: var(--crl-neutral-verydarkcyan);
+   font-size: 1.255rem;
+   font-weight: 800;
+}
+
+.shift-right-2 {
+display: block;
+position: absolute;
+left: 5.7em;
+top: 1em;
+font-size: 1.7rem;
+color: var(--crl-primary);
+font-weight: 700;
+}
+
+.amount-bottom {
+    top: 2.8em;
+}
+
+.figures-bottom {
+    top: 1.5em;
+}
+
+p {
+    font-weight: 700;
+}
+
