@@ -1,0 +1,617 @@
+//  - Soft blue (play): hsl(195, 74%, 62%) - Light red (study): hsl(348, 100%, 68%) - Lime green (exercise): hsl(145, 58%, 55%) - Violet (social): hsl(264, 64%, 52%) - Soft orange (self care): hsl(43, 84%, 65%) ### Neutral - Very dark blue: hsl(226, 43%, 10%) - Dark blue: hsl(235, 46%, 20%) - Desaturated blue: hsl(235, 45%, 61%) - Pale Blue: hsl(236, 100%, 87%) ## Typography ### Body Copy - Font size: 18px (card titles e.g. Work, Play) ### Font - Family: [Rubik](https: //fonts.google.com/specimen/Rubik)
+//     - Weights: 300, 400, 500
+
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300,400,500,700;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans:400');
+
+:root {
+    --ff-rubic: 'Rubik', sans-serif;
+    --main-card: hsl(235, 46%, 20%);
+    --bottom-card: hsl(235, 46%, 20%);
+    --top-card:hsl(235, 45%, 61%);
+
+    --primary-crl: hsl(226, 43%, 10%);
+    --light-red-crl: hsl(15, 100%, 70%);
+    --crl-pale-blue: hsl(236, 100%, 87%);
+
+    --bg-work: hsl(15, 100%, 70%);
+    --bg-play: hsl(195, 74%, 62%);
+    --bg-study: hsl(348, 100%, 68%);
+    --bg-exercise: hsl(145, 58%, 55%);
+    --bg-social: hsl(264, 64%, 52%);
+    --bg-self-care: hsl(43, 84%, 65%);
+
+    --ff-encode-sans: 'Encode Sans',
+        sans-serif;
+    ;
+
+
+
+    --f-crl: rgb(225, 226, 241);
+
+
+    --mobile: 23.5em;
+    --desktop: 90em;
+
+    --fs: 1.25rem;
+}
+
+.play {
+    background-color: var(--bg-play);
+   
+}
+
+.study {
+    background-color: var(--bg-study);
+}
+
+.exercise {
+    background-color: var(--bg-exercise); 
+}
+
+.social {
+    background-color: var(--bg-social);
+}
+
+.self-care {
+    background-color: var(--bg-self-care);
+}
+
+
+
+
+/*Main reset*/
+html {
+    font-size: 100%;
+}
+
+/*16px*/
+
+body {
+    background: white;
+    font-family: 'Encode Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #000000;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 3rem 0 1.38rem;
+    font-family: 'Encode Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 1.383rem;
+}
+
+h2 {
+    font-size: 1.296rem;
+}
+
+h3 {
+    font-size: 1.215rem;
+}
+
+h4 {
+    font-size: 1.138rem;
+}
+
+h5 {
+    font-size: 1.067rem;
+}
+
+small,
+.text_small {
+    font-size: 0.937rem;
+}
+
+
+
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+
+       font-family: var(--ff-encode-sans);
+       font-size: var(--fs);
+       background-color: var(--primary-crl);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+
+/*Grid Flex*/
+
+.column-2 {
+    display: flex;
+    gap: var(--gap, 1em);
+    justify-content: center;
+    align-items: center;
+}
+
+.column-3 {
+    display: flex;
+     --gap: 2em;
+    justify-content:space-between;
+    align-items:center;
+    margin-top: .5em;
+}
+
+.grid {
+   display: grid;
+   
+}
+
+ p.active {
+     color: #fff;
+ }
+
+.flow > :where(:not(:first-child)) {
+    margin-inline-start: var(--flow-spacer, var(--spacer));
+}
+
+
+/*Layout mobile*/
+
+.container {
+    max-width: var(--mobile);
+    width: 100%;
+    
+    margin: 0 auto;
+    padding-inline: 1em;
+    margin-block: 2em;
+
+    
+}
+
+
+img {
+    width: 80px;
+    height: 80px;
+}
+
+/*Utilities*/
+
+.main-card {
+    width: 100%;
+    height: 25ch;
+   
+    background:var(--main-card);
+    border-radius: 1em;
+    margin-bottom: .5em;
+  
+
+
+}
+
+/*Section calender*/
+
+.calender {
+
+        .top-card-img {
+            object-fit: contain;
+            border: 3px solid #fff;
+            border-radius: 50%;
+
+        }
+}
+
+.card {
+    height: 20ch;
+    margin-bottom: 2em;
+    margin-top: 2em;
+
+   
+
+   overflow: visible;
+ 
+     border-radius: 1em;
+
+    .img {
+        background-position-x: -40px;
+        background-size:cover;
+        margin-left: 72%;
+
+        position: relative;
+        top: -5px; 
+    
+      
+    }
+}
+
+.test 
+.test-img {
+   margin: 0;
+   padding: 0;
+    overflow: hidden;
+}
+
+.top-card 
+{
+    width: 100%;
+    margin: auto;
+    padding: 2em;
+    background:var(--top-card);
+  font-weight: 200;
+    border-radius: 1em;
+
+ 
+}
+
+.bottom-card {
+         width: 100%;
+         margin: auto;
+         height: 25vh;
+         background:var(--bottom-card);
+         font-weight: 300;
+         border-radius: 1em; 
+           overflow: hidden;
+           border: 0;
+           outline: none;
+
+       h1,h3 {
+         font-family: var(--ff-rubic);
+          color: #fff;
+       }
+
+       h1 {
+         font-size: 2rem;
+         font-weight: 300;
+          margin-left: 1em;
+       }
+
+       h3 {
+           font-size: 1.125rem;
+             margin-left: 1.58em;
+       }
+
+       p {
+           font-size: 5rem;
+       }
+}
+
+.content {
+
+    
+
+    h3 {
+        font-size: 1.5rem;
+        color: var(--f-crl);
+      font-weight: 300;
+    }
+
+    h1 {
+      color: rgb(202, 189, 189);
+      font-weight: 300;
+    }
+}
+
+.frequent {
+    margin-top: 2em;
+    padding-inline: 1em;
+}
+
+/*Section study*/
+
+.work,
+.study,
+.exercise,
+.self-care,
+.social ,
+.play{
+    
+   p {
+       margin-top: 20px;
+       margin-inline: 1em;
+       color: var(--f-crl);
+       font-size: 1.3rem;
+         
+
+   }
+}
+
+
+/*Section work*/
+
+.work {
+    background-color: var(--bg-work);
+}
+
+.work-data {
+    h3 {
+        margin-top: 40px;
+    }
+
+    h1 {
+        margin-top: -5px;
+    }
+
+    p {
+        margin-top: -10px;
+    }
+
+    img {
+      width: 25px;
+      height: 25px;
+      object-fit: contain;
+      margin-top: 44px;
+      color: #fff;
+      
+    }
+}
+
+/*Section play*/
+
+
+
+
+/*Layout mobile*/
+
+.container {
+    max-width: var(--mobile);
+    width: 100%;
+
+    margin: 0 auto;
+    padding-inline: 1em;
+    margin-block: 2em;
+}
+
+
+
+/*Layout Desktop*/
+
+@media (min-width:25.5em) {
+
+    .container {
+        max-width: var(--desktop);
+        width: 100%;
+
+        margin: 0 auto;
+        padding-inline: 1em;
+        margin-block: 2em;
+    }
+
+   .calender {
+        .top-card-img {
+       width: 120px;
+       height: 120px;
+      }
+   }
+  
+
+    .main-card {
+
+        height: 20ch;
+
+       
+        margin-bottom: 0.5em;
+
+     
+    }
+
+    .frequent {
+        margin-top: 1.5em;
+        padding-bottom: 0;
+    }
+
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        height: 50vh;
+        gap: 1em;
+
+        grid-template-areas:
+            "main work play study"
+            "main exe social  sc";
+        justify-content: center;
+
+     
+
+        .calender {
+            grid-area: main;
+            grid-row: 1 / -1;
+            height: 100%;
+
+        }
+
+        .work {
+            grid-area: work;
+        }
+
+        .play {
+            grid-area: play;
+        }
+
+        .study {
+            grid-area: study;
+        }
+
+        .exercise {
+            grid-area: exe;
+        }
+
+        .social {
+            grid-area: social;
+        }
+
+        .self-care {
+            grid-area: sc;
+        }
+    }
+
+   
+
+    .top-card {
+        height: 75vh;
+        margin-top: 0;
+    }
+
+
+    
+
+    .content {
+        margin-top: 1.5em;
+
+        h1 {
+            font-size: 3.5rem;
+            color: #fff;
+        }
+    }
+
+    .column-2 {
+        display: block;
+
+    }
+
+    .calender {
+         .column-3 {
+           display: block;
+        } 
+
+        p {
+            margin-bottom: .5em;
+            color: var(--crl-pale-blue);
+        }
+    }
+
+    p.active {
+        color: #fff;
+    }
+
+   .card {
+       height: 29ch;
+       margin-bottom: 2em;
+       margin-top: -1em;
+    
+       margin-top: 0;
+       border-radius: 1em;
+       .img {
+          
+           margin-left: 75%;
+           position: relative;
+           top: -10px;
+
+
+       }
+     
+   }
+
+   .bottom-card {
+       height: 40vh;
+ 
+
+       outline: none;
+       border: none;
+       overflow:auto;
+   }
+
+   .work-data {
+  
+       img {
+           display: block;
+           margin-top: 2.5em;
+       }
+   }
+
+   .work-data.datum {
+       display: block;
+       margin-top: 2em;
+       margin-left: 1em;
+
+       h1 {
+           margin-left: 0;
+           font-size: 3.5rem;
+           font-weight: 400;
+           margin-bottom: .3em;
+       }
+       p {
+           margin-left: 0;
+           color: var(--crl-pale-blue);
+       }
+   }
+
+
+
+}
