@@ -1,0 +1,14 @@
+
+
+.grid {
+    display: grid;
+    gap: var(--gap, var(--spacer));
+}
+
+
+
+@mixin grid($align:center, $justify:between) {
+    @extend .grid;
+    align-items: $align;
+    justify-content: $justify;
+}

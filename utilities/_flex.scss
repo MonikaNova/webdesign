@@ -1,0 +1,23 @@
+.flex{
+    display: flex;
+    gap:var(--gap, var(--spacer));
+}
+
+
+
+@mixin flex($align:center, $justify:between) {
+    @extend .flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+// .flex-center {
+//     @extend .flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// .nav-list {
+//     @include flex(center, center );
+// }
+

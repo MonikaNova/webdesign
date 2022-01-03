@@ -1,0 +1,13 @@
+:root {
+    --shadow-1:0 0 1em red;
+}
+
+.card {
+    padding: var(--spacer);
+    box-shadow: var(--shadow, var(--shadow-1));
+}
+
+
+.card-to-action {
+    --shadow-1: 0 0 2em rgba(0,0,0,.255);
+}

@@ -1,0 +1,8 @@
+@use '../utilities/grid'  as *;
+
+.main-layout {
+    @extend .grid;
+    // grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
