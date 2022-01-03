@@ -1,0 +1,528 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Lato:wght@400;900&display=swap");
+:root {
+  --primary-orange:hsl(26, 100%, 55%),
+   --pale-orange:hsl(25 , 100% , 94%),
+   --neutral-very-dark:hsl(220, 13%, 13%),
+  --dark-grayish-blue:hsl(219, 9%, 45%),
+  --grayish-blue:hsl(220, 14%, 75%),
+  --ligth-grayish-blue:hsl(223, 64%, 98%) ,
+  --white:hsl(0, 0%, 100%),
+  --black:hsl(0, 0%, 0%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*Helpers*/
+.shift {
+  transform: translateX(-405px);
+  transition: translateX 5000ms ease-in-out;
+}
+
+.none {
+  display: none;
+}
+
+.box {
+  box-shadow: 5px 10px 3px rgba(0, 0, 0, 0.7);
+  padding-inline: 4em;
+  padding-block: 1em;
+}
+
+body {
+  line-height: 1.6;
+  font-family: var(--ff);
+  overflow-x: hidden;
+}
+
+.person {
+  width: 25px;
+}
+
+.container {
+  width: 100%;
+  max-width: 40em;
+  padding-inline: 1em;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  position: relative;
+}
+
+/*Pop up window with javascript*/
+.pop-up,
+.popup-item {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40vh;
+  height: 20vh;
+}
+.pop-up .content,
+.popup-item .content {
+  width: 400px;
+  height: 270px;
+  position: absolute;
+  top: 70%;
+  left: 30%;
+  transform: translate(-20%, -20%) scale(0);
+  background-color: #fff;
+  border-radius: 1em;
+}
+.pop-up .card-title,
+.popup-item .card-title {
+  padding: 1em;
+  font-size: 1.4rem;
+  text-align: left;
+  color: #68707d;
+}
+.pop-up .card-title:after,
+.popup-item .card-title:after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  display: block;
+  position: absolute;
+  top: 3.155em;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(124, 122, 122, 0.3);
+}
+.pop-up .card-text,
+.popup-item .card-text {
+  margin-top: 4.2em;
+  text-align: center;
+  font-size: 1.225rem;
+  color: #6a717c;
+}
+
+.pop-up.active {
+  visibility: visible;
+}
+
+.pop-up.active .content,
+.popup-item.active .content {
+  transition: all 700ms ease-out;
+  transform: translate(-15%, 0%) scale(1);
+}
+
+.popup-item.active {
+  visibility: visible;
+}
+
+/*Layout*/
+/*Header*/
+/*Navigation */
+.nav {
+  width: 80%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.89);
+  transition: all 3s ease-in-out 0.5s;
+  position: absolute;
+  top: 0;
+  left: -10%;
+  right: 0;
+}
+.nav ul {
+  margin-top: 5em;
+}
+.nav li {
+  margin-left: 2em;
+  margin-top: 1.5em;
+  list-style: none;
+}
+.nav a {
+  color: var(--crl-black);
+  text-decoration: none;
+}
+.nav a:hover {
+  cursor: pointer;
+}
+.nav img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 1em;
+  left: 16%;
+}
+.nav img:hover {
+  cursor: pointer;
+}
+
+.left {
+  margin-left: auto;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin-left: 0.5em;
+}
+.icon img {
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.shopping {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5em;
+}
+.shopping .shop-count {
+  position: absolute;
+  top: 0px;
+  right: 3.4em;
+  color: #fff;
+}
+
+.shop-count {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 0.225em;
+  width: 17px;
+  height: 17px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: brown;
+  visibility: hidden;
+  transition: all 0.5s ease-out;
+}
+
+.shop-count.active {
+  visibility: visible;
+}
+
+.product {
+  width: 100%;
+  object-fit: cover;
+}
+.product .images {
+  display: none;
+}
+
+.backet img {
+  cursor: pointer;
+}
+
+.backet .show {
+  visibility: visible;
+}
+
+/*Section Sneakers*/
+.sneakers {
+  margin-block: 1em;
+}
+.sneakers h3 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ff7d1a;
+  margin-bottom: 1em;
+}
+.sneakers h1 {
+  color: #4b4a4a;
+}
+.sneakers p {
+  color: #6a717c;
+}
+
+/*Section values*/
+.values {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+.values div:nth-child(1) {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+.values div:nth-child(2) {
+  color: #ff7d1a;
+}
+.values div:nth-child(3) {
+  margin-right: 1em;
+}
+.values .fifty {
+  margin-right: 20px;
+}
+
+/*Math marks*/
+.math__marks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  margin-block: 3em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.section-button {
+  margin-right: 1em;
+  padding-bottom: 2em;
+}
+.section-button .btn {
+  width: 100%;
+  padding: 1em 2em;
+  background-color: #ff7d1a;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 1em;
+}
+.section-button img {
+  display: inline-block;
+  margin-right: 1em;
+  font-size: 10px;
+}
+
+@media (min-width: 50em) {
+  .header {
+    width: 100%;
+    padding-block: 1.5em;
+    padding-inline: 10%;
+  }
+
+  .nav {
+    top: -85px;
+    left: 25%;
+    background-color: transparent;
+  }
+  .nav ul {
+    display: flex;
+    gap: 2em;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5.5em;
+  }
+  .nav li {
+    margin-left: 0;
+    margin-top: 1.5em;
+  }
+  .nav a {
+    color: #616161;
+    font-size: 1.2rem;
+  }
+  .nav img {
+    display: none;
+  }
+
+  .icon {
+    margin-left: 0.5em;
+  }
+
+  .none {
+    display: none;
+  }
+
+  .divider {
+    width: 75%;
+    height: 1px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-block: 1em;
+  }
+
+  .shopping {
+    margin-right: 5%;
+  }
+
+  .row {
+    margin-top: 5em;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .product {
+    max-width: 35em;
+    padding-bottom: 4em;
+  }
+  .product img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1em;
+    aspect-ratio: 1;
+  }
+  .product .images {
+    display: block;
+    width: 20%;
+  }
+
+  .sneakers h1 {
+    color: var(--crl-black);
+    font-size: 3.5rem;
+  }
+
+  .flex__value {
+    display: flex;
+    gap: 1em;
+  }
+
+  .values {
+    display: inline-block;
+  }
+  .values div:nth-child(1) {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  .values div:nth-child(2) {
+    margin-top: -2em;
+    margin-left: 7em;
+  }
+  .values div:nth-child(3) {
+    margin-top: 1.5em;
+  }
+  .values .fifty {
+    margin-right: 20px;
+  }
+
+  .row-math__marks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .math__marks {
+    flex-basis: 35%;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1em 1em;
+    margin-top: 1em;
+    margin-left: 0;
+    border-radius: 1em;
+    margin-right: 0;
+  }
+  .math__marks img {
+    width: 0.825em;
+    flex: 1 1;
+  }
+
+  .images {
+    display: block;
+  }
+
+  .row-product {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: var(--gap);
+    margin-top: 1.5em;
+  }
+
+  .button {
+    width: 100%;
+    padding-bottom: 2em;
+    margin-left: 1em;
+  }
+  .button .btn {
+    width: 100%;
+    padding: 1em 2em;
+    background-color: #ff7d1a;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 1em;
+  }
+  .button img {
+    display: inline-block;
+    margin-right: 1em;
+    font-size: 10px;
+  }
+
+  .close {
+    display: none;
+  }
+
+  .shift {
+    transform: translateX(0);
+  }
+}/*# sourceMappingURL=style.css.map */
